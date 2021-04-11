@@ -37,7 +37,6 @@ function generatePassword() {
   }
 
   passLength = verifyLength();
-  console.log(passLength);
 
   // prompt for upper case letters
   // prompt for lower case letters
