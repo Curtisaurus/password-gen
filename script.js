@@ -17,5 +17,34 @@ function writePassword() {
 
 }
 
+// password generation functionality
+function generatePassword() {
+  // prompt for length with function to verify appropriate input type
+  function verifyLength() {
+    var passLength = prompt("Enter desired number of password characters: \n(min: 8, max: 128)");
+
+    // exits function on cancel button
+    if (!passLength) {  
+      return;
+      // verifies that password is between 8 and 128 characters
+    } else if (passLength < 8 || passLength > 128) {
+      alert("Must be an integer between 8 and 128");
+      passLength = verifyLength();
+    }
+
+    return passLength;
+
+  }
+
+  passLength = verifyLength();
+  console.log(passLength);
+
+  // prompt for upper case letters
+  // prompt for lower case letters
+  // prompt for numbers
+  // prompt for special characters
+  return;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
