@@ -33,17 +33,14 @@ function generatePassword() {
   function verifyLength() {
     var passLength = prompt("Enter desired number of password characters: \n(min: 8, max: 128)");
 
-    // variable to that stores string as number or returns falsey value
-    var numCheck = parseFloat(passLength);
-
-    // variable that stores 0 if number is integer
-    var intCheck = numCheck % 1;
+    // variable that stores 0 if number is integer, NaN if other string, or value >0 if number not an integer
+    var intCheck = passLength % 1;
 
     // exits function on cancel button
     if (!passLength) {  
       return;
       // verifies that password is an integer between 8 and 128 inclusive
-    } else if (passLength < 8 || passLength > 128 || !numCheck || intCheck > 0) {
+    } else if (passLength < 8 || passLength > 128 || Number.isNaN(intCheck) || intCheck > 0) {
       // shows alert and runs character length prompt function again
       alert("Must be an integer between 8 and 128");
       return verifyLength();
