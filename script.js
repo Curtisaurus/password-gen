@@ -13,6 +13,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // does not change textbox if falsey/undefined value such as when cancel is selected in first prompt
   if (password) {
     passwordText.value = password;
   }
