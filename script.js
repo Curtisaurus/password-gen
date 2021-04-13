@@ -40,7 +40,7 @@ function generatePassword() {
     if (!passLength) {  
       return;
       // verifies that password is an integer between 8 and 128 inclusive
-    } else if (passLength < 8 || passLength > 128 || Number.isNaN(intCheck) || intCheck > 0) {
+    } else if (passLength < 8 || passLength > 128 || intCheck != 0) {
       // shows alert and runs character length prompt function again
       alert("Must be an integer between 8 and 128");
       return verifyLength();
